@@ -18,7 +18,7 @@ export const Navbar = () => {
               bg="white"
               borderRadius="md"
               border="2px"
-              borderColor="gray.700"
+              borderColor="blue.500"
               letterSpacing="-.05em"
               fontSize="xl"
               fontWeight="bold"
@@ -26,14 +26,14 @@ export const Navbar = () => {
               h="52px"
               justify="center"
               align="center"
-              color="gray.900"
+              color="blue.500"
               shrink="0"
             >
-              /-/
+              ⚕
             </Flex>
             <Link href="/" textDecoration="none">
               <Box fontSize="lg" fontWeight="bold" color="gray.900" ml={4}>
-                Fundraising
+                MediForge Fund
               </Box>
             </Link>
           </Flex>

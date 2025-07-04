@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediForge Fund - Open Source Medical Device Innovation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+        }
+        
+        .navbar {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 0 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+        
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: none;
+            border: none;
+        }
+        
+        .nav-logo img {
+            height: 72px;
+            width: auto;
+            display: block;
+        }
+        
+        .nav-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .nav-wallet {
+            background: #3182ce;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            margin-bottom: 2rem;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #718096;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .image-carousel {
+            position: relative;
+            background: #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-placeholder {
+            text-align: center;
+            color: #718096;
+            font-size: 1.1rem;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .carousel-prev {
+            left: 12px;
+        }
+        
+        .carousel-next {
+            right: 12px;
+        }
+        
+        .carousel-counter {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+        
+        .campaign-stats {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .stat-help {
+            font-size: 12px;
+            color: #a0aec0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3182ce, #4299e1);
+            width: 35%;
+            border-radius: 6px;
+        }
+        
+        .donate-button {
+            width: 100%;
+            background: #3182ce;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        
+        .donate-button:hover {
+            background: #2c5aa0;
+        }
+        
+        .funding-info {
+            font-size: 12px;
+            color: #718096;
+            line-height: 1.4;
+        }
+        
+        .funding-info strong {
+            color: #2d3748;
+        }
+        
+        .markdown-content {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        .markdown-content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        .markdown-content p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        
+        .markdown-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+        
+        .markdown-content strong {
+            color: #2d3748;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .main-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo"><img src="front-end/public/logo.png" alt="MediForge Fund"></div>
+            </div>
+            <div class="nav-wallet">Connect Wallet</div>
+        </div>
+    </nav>
+    
+    <main class="main-container">
+        <div class="header">
+            <h1 class="title">MediForge Fund</h1>
+            <p class="subtitle">Open Source Medical Device Innovation for Global Healthcare Access</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="image-carousel">
+                <div class="carousel-placeholder">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏥</div>
+                    <div>Medical Device Innovation</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">Portable Ventilator Project</div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-counter">1 / 5</div>
+            </div>
+            
+            <div class="campaign-stats">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-label">Raised</div>
+                        <div class="stat-number">$17,500</div>
+                        <div class="stat-help">of $50,000 goal</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Contributions</div>
+                        <div class="stat-number">127</div>
+                        <div class="stat-help">2,160 BTC blocks left</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                
+                <button class="donate-button">Support Medical Innovation</button>
+                
+                <div class="funding-info">
+                    <div style="margin-bottom: 0.5rem;">
+                        <strong>Transparent funding</strong>: All donations are recorded on the blockchain and support open-source medical device development. Your contribution helps make life-saving technology accessible to underserved communities.
+                    </div>
+                    <div>
+                        Funded projects release their designs as patent-free, open-source technology for global accessibility.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="markdown-content">
+            <h1>MediForge Fund: Revolutionizing Healthcare Through Open Source Innovation</h1>
+            
+            <h2>Our Mission</h2>
+            <p>MediForge Fund is dedicated to democratizing access to life-saving medical technologies through transparent, blockchain-powered fundraising for open-source medical device development. We believe that healthcare innovation should be accessible to all communities, regardless of their economic status or geographic location.</p>
+            
+            <h2>The Challenge</h2>
+            <p>Millions of people worldwide lack access to essential medical devices due to:</p>
+            <ul>
+                <li><strong>High Costs</strong>: Proprietary medical devices often cost thousands of dollars</li>
+                <li><strong>Patent Restrictions</strong>: Life-saving technologies are locked behind intellectual property barriers</li>
+                <li><strong>Limited Distribution</strong>: Rural and underserved communities struggle to access medical equipment</li>
+                <li><strong>Lack of Innovation</strong>: Traditional funding models prioritize profit over public health impact</li>
+            </ul>
+            
+            <h2>Our Solution</h2>
+            <p>MediForge Fund leverages blockchain technology to create a transparent, community-driven platform for funding open-source medical device innovation. Every funded project commits to:</p>
+            <ul>
+                <li><strong>Open Source Design</strong>: All device designs are released as patent-free, open-source technology</li>
+                <li><strong>Transparent Funding</strong>: All donations and fund usage are recorded on the blockchain</li>
+                <li><strong>Global Accessibility</strong>: Designs are freely available for local manufacturing and distribution</li>
+                <li><strong>Community Impact</strong>: Focus on solutions that address real healthcare challenges</li>
+            </ul>
+            
+            <h2>Current Campaign: Portable Ventilator Project</h2>
+            <p>Our inaugural campaign focuses on developing a low-cost, portable ventilator system that can be manufactured locally using readily available materials.</p>
+            
+            <h3>Project Goals</h3>
+            <ul>
+                <li><strong>Target Funding</strong>: $50,000 USD</li>
+                <li><strong>Timeline</strong>: 6 months from funding completion</li>
+                <li><strong>Deliverables</strong>: Complete open-source design package including 3D printable components, circuit schematics, assembly instructions, testing protocols, and regulatory compliance documentation</li>
+            </ul>
+            
+            <h3>Impact</h3>
+            <ul>
+                <li><strong>Immediate</strong>: Provide ventilators to rural clinics and emergency response teams</li>
+                <li><strong>Long-term</strong>: Enable local manufacturing capabilities in underserved regions</li>
+                <li><strong>Global</strong>: Create a template for future open-source medical device projects</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html> 

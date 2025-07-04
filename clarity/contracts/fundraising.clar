@@ -1,5 +1,6 @@
-;; Fundraising Campaign Contract
-;; A simple contract to accept crypto donations in STX or sBTC.
+;; MediForge Fund - Medical Device Innovation Fundraising Contract
+;; A transparent contract to accept crypto donations in STX or sBTC for open-source medical device development.
+;; This contract enables transparent fundraising for patent-free medical technologies that provide life-saving healthcare solutions.
 
 ;; Constants 
 (define-constant contract-owner tx-sender)

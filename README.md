@@ -1,10 +1,20 @@
-# STX/sBTC Fundraising App
+# MediForge Fund
 
-![Fundraising on Stacks](./screenshot.png)
+![MediForge Fund Logo](./front-end/public/logo.png)
 
-This is a simple crypto fundraising web page built on Stacks. It lets people run a campaign to raise funds in STX and sBTC.
+![MediForge Fund - Open Source Medical Device Innovation](./screenshot.png)
 
-This example app is intended for educational purposes only. The provided smart contracts have not been audited.
+🛠 **MediForge Fund** is a decentralized application (dApp) built on the **Stacks blockchain** to support open-source medical device innovation. The project enables transparent fundraising for the design and distribution of patent-free medical technologies that provide life-saving healthcare solutions to underserved communities.
+
+This platform allows innovators, researchers, and healthcare professionals to create fundraising campaigns for medical device projects that will be released as open-source designs, making healthcare technology accessible to communities worldwide.
+
+## Mission
+
+MediForge Fund aims to democratize access to life-saving medical technologies by:
+- **Transparent Fundraising**: All donations and fund usage are recorded on the blockchain
+- **Open Source Innovation**: Funded projects release their designs as patent-free, open-source technology
+- **Global Impact**: Supporting underserved communities with accessible healthcare solutions
+- **Community-Driven**: Empowering innovators to create solutions for real healthcare challenges
 
 ## Development
 
@@ -25,12 +35,10 @@ Install dependencies:
 npm install
 ```
 
-
 Create an `.env` file using the existing `.env.example` file:
 ```bash
 cp front-end/.env.example front-end/.env
 ```
-
 
 Add your Hiro Platform API key to the renamed `front-end/.env` file:
 ```bash
@@ -45,12 +53,11 @@ cd front-end
 npm run dev
 ```
 
-
-Visit `[http://localhost:3000](http://localhost:3000)` in your browser to view and interact with the marketplace. If Devnet is running, your test wallets will already be funded and connected for testing.
+Visit `[http://localhost:3000](http://localhost:3000)` in your browser to view and interact with the MediForge Fund platform. If Devnet is running, your test wallets will already be funded and connected for testing.
 
 ## Customization
 
-To customize this app for your fundraiser, edit the files `front-end/src/constants/campaign.ts` and `front-end/public/campaign-details.md`. Add images for the carousel to the `front-end/public/campaign` folder.
+To customize this app for your medical device fundraising campaign, edit the files `front-end/src/constants/campaign.ts` and `front-end/public/campaign-details.md`. Add images for the carousel to the `front-end/public/campaign` folder.
 
 The given Devnet deployment plan (found in `clarity/deployments/default.devnet-plan.yaml`) includes steps to initialize the campaign with a given funding goal. You can customize this plan as desired.
 
@@ -58,7 +65,7 @@ When you're ready to deploy in Testnet or Mainnet, you can choose to add similar
 
 ## About the Smart Contracts
 
-This app uses a Clarity smart contract which handles the collection of funds.
+This app uses a Clarity smart contract which handles the collection of funds for medical device innovation projects.
 
 ### `fundraising.clar`
 
@@ -67,6 +74,7 @@ This app uses a Clarity smart contract which handles the collection of funds.
 - Tracks individual contributions
 - Lets the beneficiary (contract owner) withdraw the raised funds if the goal is hit
 - Allows the beneficiary to cancel the campaign and refund the contributions to the donors at any point
+- Ensures transparency in fundraising for medical device development
 
 ## Testing with Devnet
 
@@ -100,7 +108,7 @@ Remember that any changes to the contracts will require restarting Devnet and re
 With Devnet running, you can test your front-end functionality and validate that it's working in the same way you just tested the fundraising functions.
 
 1. Confirm that your Devnet is running in the Platform dashboard and `npm run dev` is running in the front-end directory
-2. Navigate to [http://localhost:3000](http://localhost:3000) to view and interact with the fundraising app
+2. Navigate to [http://localhost:3000](http://localhost:3000) to view and interact with the MediForge Fund platform
 3. View your campaign and test the contribution, refunding, and withdrawal functionality using the pre-funded wallets. Use the wallet picker in the upper right corner to choose between different test wallets.
 4. Navigate to the Devnet dashboard in the Platform to view the transactions as they are submitted and resolved on-chain.
 
@@ -129,3 +137,15 @@ When you're ready to launch your app:
 5. Launch your application and begin processing real transactions!
 
 Remember: Mainnet deployments are permanent and involve real cryptocurrency transactions. Double-check all contract code and frontend integrations before deploying to Mainnet.
+
+## Contributing
+
+We welcome contributions from developers, medical professionals, and innovators who share our vision of democratizing access to medical technology. Please see our contributing guidelines for more information.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Disclaimer
+
+This application is intended for educational and development purposes. The provided smart contracts have not been audited for production use. Always conduct thorough testing and security audits before deploying to mainnet.

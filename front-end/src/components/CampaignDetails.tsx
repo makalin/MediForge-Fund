@@ -306,7 +306,7 @@ export default function CampaignDetails({
                                 <Box>Thanks for your contribution!</Box>
                               ) : (
                                 <Button
-                                  colorScheme="green"
+                                  colorScheme="blue"
                                   onClick={handleRefund}
                                 >
                                   Request a Refund
@@ -321,24 +321,20 @@ export default function CampaignDetails({
                     <Flex direction="column" gap="4">
                       <Button
                         size="lg"
-                        colorScheme="green"
+                        colorScheme="blue"
                         width="full"
                         onClick={() => {
                           setIsDonationModalOpen(true);
                         }}
                       >
-                        Contribute Now
+                        Support Medical Innovation
                       </Button>
                       <Box fontSize="xs">
                         <Box mb="2">
-                          <strong>Flexible funding</strong>: Creator keeps
-                          whatever money they raise, even if they don&apos;t hit
-                          their target. No refunds to backers if the campaign
-                          falls short.
+                          <strong>Transparent funding</strong>: All donations are recorded on the blockchain and support open-source medical device development. Your contribution helps make life-saving technology accessible to underserved communities.
                         </Box>
                         <Box>
-                          The creator can always choose to cancel this
-                          fundraiser and provide refunds.
+                          Funded projects release their designs as patent-free, open-source technology for global accessibility.
                         </Box>
                       </Box>
                     </Flex>

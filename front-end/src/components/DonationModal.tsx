@@ -179,7 +179,7 @@ export default function DonationModal({
     <Modal isOpen={isOpen} onClose={onClose} size="full">
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Make a Contribution</ModalHeader>
+        <ModalHeader>Support Medical Innovation</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb="8">
           <Flex direction="column" gap="3">
@@ -285,7 +285,7 @@ export default function DonationModal({
 
                     <Flex direction="column" gap="1">
                       <Button
-                        colorScheme="green"
+                        colorScheme="blue"
                         size="lg"
                         onClick={handleSubmit}
                         isDisabled={
@@ -293,7 +293,7 @@ export default function DonationModal({
                         }
                         isLoading={isLoading}
                       >
-                        Donate ${selectedAmount || customAmount || "0"}
+                        Support Innovation ${selectedAmount || customAmount || "0"}
                       </Button>
                       <Box mx="auto" fontSize="sm" fontWeight="bold">
                         (≈

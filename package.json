@@ -1,5 +1,5 @@
 {
-  "name": "fundraising-dapp",
+  "name": "mediforge-fund",
   "private": true,
   "workspaces": [
     "clarity",
